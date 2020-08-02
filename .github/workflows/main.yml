@@ -13,7 +13,7 @@ jobs:
       run: |
         echo start
         IMAGE_NAME=${APP_NAME}:latest
-        docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile .
+        docker build -t ${IMAGE_NAME} -f docker/Dockerfile .
         docker images
       env:
           APP_NAME: ${{ secrets.APP_NAME }}
