@@ -3,9 +3,9 @@ services:
   main:
     image: mysite:1.0.0
     build:
-      context: ../../
-      dockerfile: ./docker/main/Dockerfile
+      context: ..
+      dockerfile: Dockerfile
     ports:  
       - "8000:8000"  
     volumes:  
-      - ../../mysite:/usr/src/app/mysite
+      - ../mysite:/usr/src/app/mysite
