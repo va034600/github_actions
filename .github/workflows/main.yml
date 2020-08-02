@@ -1,10 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
@@ -13,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run a multi-line script
+    - name: build docker
       run: |
         echo start
-        docker build ./app --tag gha:latest
+        docker build ./docker/main --tag gha:latest
