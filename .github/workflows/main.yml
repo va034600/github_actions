@@ -12,6 +12,5 @@ jobs:
     - name: build docker
       run: |
         echo start
-        docker build ./docker/main --tag gha:latest
         docker build -t gha:latest -f docker/Dockerfile .
 
