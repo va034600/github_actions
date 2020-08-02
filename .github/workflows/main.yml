@@ -12,5 +12,9 @@ jobs:
     - name: build docker
       run: |
         echo start
-        docker build -t gha:latest -f docker/Dockerfile .
+        IMAGE_NAME=${APP_NAME}:latest
+        docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile .
+        docker images
+      env:
+          APP_NAME: ${{ secrets.APP_NAME }}
 
